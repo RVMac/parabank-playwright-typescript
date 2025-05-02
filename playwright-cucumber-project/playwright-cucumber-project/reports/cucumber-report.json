@@ -1,0 +1,228 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "parabank;end-to-end-test-for-parabank-application",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "End To End Test for ParaBank Application",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 122101700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I am on the ParaBank login page",
+            "match": {
+              "location": "src\\step-definitions\\login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1712122299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on the Register link",
+            "match": {
+              "location": "src\\step-definitions\\account-creation.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 648092799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see the account sign up sheet",
+            "match": {
+              "location": "src\\step-definitions\\account-creation.steps.ts:63"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57941700
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Fields",
+                      "Value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "First Name",
+                      "John"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Last Name",
+                      "Doe"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Address",
+                      "123 Main St"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "City",
+                      "Anytown"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "State",
+                      "CA"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Zip Code",
+                      "12345"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Phone",
+                      "1234567890"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "SSN",
+                      "123-45-6789"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Username",
+                      "johndoe_{random}"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Password",
+                      "password123"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I register the following user details:",
+            "match": {
+              "location": "src\\step-definitions\\account-creation.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 383005100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "customer creation should be successful",
+            "match": {
+              "location": "src\\step-definitions\\account-creation.steps.ts:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24483000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I proceed to logout",
+            "match": {
+              "location": "src\\step-definitions\\parabank.accountsoverview.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 832543799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I should see the Login Page of ParaBank",
+            "match": {
+              "location": "src\\step-definitions\\login.steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23580899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I login using credentials of the created account",
+            "match": {
+              "location": "src\\step-definitions\\login.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 751169399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I should see the Accounts Overview page",
+            "match": {
+              "location": "src\\step-definitions\\parabank.accountsoverview.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18079999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 28854800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "parabank",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "ParaBank",
+    "tags": [],
+    "uri": "src\\features\\ParaBank.feature"
+  }
+]
