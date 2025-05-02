@@ -1,0 +1,82 @@
+name: Playwright Cucumber Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 3 * * *"  # Runs daily at 3 AM UTC
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: List current directory
+        run: ls -la
+
+      - name: Set npm registry
+        run: npm config set registry https://registry.npmjs.org/
+      
+      - name: Clear npm cache
+        run: npm cache clean --force
+      
+      - name: Move to Playwright Cucumber Project and Install Cucumber Dependencies explicit
+        run: |
+          if [ -d "playwright-cucumber-project" ]; then
+            cd playwright-cucumber-project
+            echo "Now inside: $(pwd)"
+            ls -la
+            npm install -g cucumber
+          else
+            echo "Directory 'playwright-cucumber-project' not found!"
+            exit 1
+          fi
+      
+      - name: Move to Playwright Cucumber Project and Install other Dependencies
+        run: |
+          if [ -d "playwright-cucumber-project" ]; then
+            cd playwright-cucumber-project
+            echo "Now inside: $(pwd)"
+            ls -la
+            npm install
+          else
+            echo "Directory 'playwright-cucumber-project' not found!"
+            exit 1
+          fi
+
+      - name: Move to Playwright Cucumber Project and Install Playwright Browsers
+        run: |
+          if [ -d "playwright-cucumber-project" ]; then
+            cd playwright-cucumber-project
+            echo "Now inside: $(pwd)"
+            ls -la
+            npx playwright install --with-deps
+          else
+            echo "Directory 'playwright-cucumber-project' not found!"
+            exit 1
+          fi  
+
+      - name: Move to Playwright Cucumber Project and Run Cucumber Tests
+        run: |
+          if [ -d "playwright-cucumber-project" ]; then
+            cd playwright-cucumber-project
+            echo "Now inside: $(pwd)"
+            ls -la
+            npm test
+          else
+            echo "Directory 'playwright-cucumber-project' not found!"
+            exit 1
+          fi
