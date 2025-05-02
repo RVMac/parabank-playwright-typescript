@@ -3,7 +3,7 @@ import { expect, Locator, Page } from "@playwright/test";
 export class ParaBankLoginPage {
   private page: Page;
 
-  //#region Locators
+  // #region Locators
   private customerLoginHeader: Locator;
   private registerLink: Locator;
   private usernameTextbox: Locator;
@@ -24,12 +24,12 @@ export class ParaBankLoginPage {
   private repeatedPasswordTextbox: Locator;
   private registerButton: Locator;
 
-  //#endregion Locators
+  // #endregion Locators
 
   constructor(page: Page) {
     this.page = page;
 
-    //#region Locators
+    // #region Locators
     this.customerLoginHeader = page.getByRole('heading', { name: 'Customer Login' });
     this.registerLink = page.getByRole("link", { name: "Register" });
     this.usernameTextbox = page.locator('input[name="username"]');
@@ -49,7 +49,7 @@ export class ParaBankLoginPage {
     this.createPasswordTextbox = page.locator('[id="customer\\.password"]');
     this.repeatedPasswordTextbox = page.locator('#repeatedPassword');
     this.registerButton = page.getByRole('button', { name: 'Register' });
-    //#endregion Locators
+    // #endregion Locators
 
   }
 

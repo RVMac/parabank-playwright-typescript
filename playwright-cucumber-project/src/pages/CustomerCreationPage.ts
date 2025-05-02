@@ -1,17 +1,17 @@
 import { Locator, Page } from "playwright";
 import { expect } from "playwright/test";
 
-export class ParaBankHomePage {
+export class CustomerCreationPage {
   private page: Page;
   private successMessageBody: Locator;
   private logoutButton: Locator;
   constructor(page: Page) {
     this.page = page;
 
-    //#region Locators
+    // #region Locators
     this.successMessageBody = page.getByText('Your account was created successfully. You are now logged in.');
     this.logoutButton = page.getByRole('link', { name: 'Log Out' });
-    //#endregion Locators
+    // #endregion Locators
   }
 
   async verifyCustomerCreationSuccess(username: string) {

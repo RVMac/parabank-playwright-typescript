@@ -1,10 +1,10 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { ParaBankLoginPage } from "../pages/LoginPage";
 import { faker } from '@faker-js/faker';
-import { ParaBankHomePage } from "../pages/CustomerCreationPage";
+import { CustomerCreationPage } from "../pages/CustomerCreationPage";
 
 let loginPage: ParaBankLoginPage;
-let homepage: ParaBankHomePage;
+let homepage: CustomerCreationPage;
 
 let registrationData: { [key: string]: string } = {};
 
@@ -65,7 +65,7 @@ Then('I should see the account sign up sheet', async function () {
 });
 
 Then('customer creation should be successful', async function () {
-  homepage = new ParaBankHomePage(this.page);
+  homepage = new CustomerCreationPage(this.page);
   let createUsername: string = this.scenarioContext.get('createUsername');
   await homepage.verifyCustomerCreationSuccess(createUsername);
 });

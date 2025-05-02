@@ -9,7 +9,7 @@ export class ParaBankAccountOverViewPage {
   constructor(page: Page) {
     this.page = page;
 
-    //#region Locators
+    // #region Locators
     this.accountOverviewHeader = page.getByRole('heading', { name: 'Accounts Overview' });
     this.accountTable = page.locator("//table[@id='accountTable']");
   }
@@ -18,4 +18,10 @@ export class ParaBankAccountOverViewPage {
     await expect(this.page).toHaveTitle("ParaBank | Accounts Overview");
     await expect(this.accountOverviewHeader).toBeVisible();
   }
+
+  
+  async verifyAccountBalance(accountNumber: number, balance: string) {
+    let accountBalanceElement : Locator = await this.page.locator(`//tr[contains(.,'${accountNumber}')]//td[2]`);
+    await expect(accountBalanceElement).toHaveText(balance);
+  };
 }
