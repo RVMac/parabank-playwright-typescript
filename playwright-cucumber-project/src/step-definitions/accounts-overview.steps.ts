@@ -1,32 +1,22 @@
 import { Then, When } from "@cucumber/cucumber";
 import { CustomerCreationPage } from "../pages/CustomerCreationPage";
-import { ParaBankAccountOverViewPage } from "../pages/AccountOverViewPage";
+import { AccountOverViewPage } from "../pages/AccountOverViewPage";
 import { GlobalNavigationPage } from "../pages/GlobalNavigationPage";
 
 let homepage: CustomerCreationPage;
-let accountsOverviewPage: ParaBankAccountOverViewPage;
-let globalNavPage: GlobalNavigationPage;
+let accountsOverviewPage: AccountOverViewPage;
 
 // #region WHEN STEPS
 When('I proceed to logout', async function () {
   homepage = new CustomerCreationPage(this.page);
   await homepage.clickLogoutLink();
 });
-
-When('I click the Home Page global navigation link', async function () {
-  globalNavPage = new GlobalNavigationPage(this.page);
-  await globalNavPage.clickGlobalHomeNavLink();
-});
-
-When('I click on the Accounts Overview navigation link', async function () {
-  await globalNavPage.clickAccountsOverviewLink();
-});
 // #endregion WHEN STEPS
 
 
 // #region THEN STEPS
 Then('I should see the Accounts Overview page' , async function () {
-  accountsOverviewPage = new ParaBankAccountOverViewPage(this.page);
+  accountsOverviewPage = new AccountOverViewPage(this.page);
   await accountsOverviewPage.verifyAccountOverviewPage();
 });
 

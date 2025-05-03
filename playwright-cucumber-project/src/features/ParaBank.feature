@@ -35,3 +35,10 @@ Feature: ParaBank
              Then I should see success message for new account creation
              When I click on the Accounts Overview navigation link
              Then I can see the new account has "$100.00" balance
+
+            # Transfer funds between accounts
+             When I click the Transfer Funds navigation link
+              And I transfer "$50.00" from the new account to the existing account
+             Then I should see success message for fund transfer
+            #  When I click on the Accounts Overview navigation link
+            #  Then I can see the new account has "$50.00" balance and the existing account has "$150.00" balance

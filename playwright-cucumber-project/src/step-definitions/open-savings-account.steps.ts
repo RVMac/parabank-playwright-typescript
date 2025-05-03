@@ -27,3 +27,4 @@ When('I open a new {string} account', async function (type: string) {
 Then('I should see success message for new account creation', async function () {
   await openNewAccountPage.verifyNewAccountCreationSuccess();
 });
+// #endregion THEN STEPS

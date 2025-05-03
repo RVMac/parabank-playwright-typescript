@@ -3,8 +3,12 @@ import { expect } from "playwright/test";
 
 export class CustomerCreationPage {
   private page: Page;
+  
+  // #region Locators
   private successMessageBody: Locator;
   private logoutButton: Locator;
+  // #endregion Locators
+  
   constructor(page: Page) {
     this.page = page;
 

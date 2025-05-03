@@ -1,7 +1,7 @@
 import { Locator, Page } from "playwright";
 import { expect } from "playwright/test";
 
-export class ParaBankAccountOverViewPage {
+export class AccountOverViewPage {
   private page: Page;
   private accountOverviewHeader: Locator;
   private accountTable: Locator;
