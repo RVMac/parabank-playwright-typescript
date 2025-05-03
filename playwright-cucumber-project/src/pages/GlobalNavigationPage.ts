@@ -8,6 +8,7 @@ export class GlobalNavigationPage {
   private openNewAccountLink: Locator;
   private accountsOverviewLink: Locator;
   private transferFundsLink: Locator;
+  private billPayLink: Locator;
   // #endregion Locators
 
   constructor(page: Page) {
@@ -18,6 +19,7 @@ export class GlobalNavigationPage {
     this.openNewAccountLink = page.getByRole('link', { name: 'Open New Account' });
     this.accountsOverviewLink = page.getByRole('link', { name: 'Accounts Overview' });
     this.transferFundsLink = page.getByRole('link', { name: 'Transfer Funds' });
+    this.billPayLink = page.getByRole('link', { name: 'Bill Pay' });
     // #region Locators
   }
 
@@ -35,5 +37,9 @@ export class GlobalNavigationPage {
 
   async clickTransferFundsLink() {
     await this.transferFundsLink.click();
+  }
+
+  async clickBillPayLink() {
+    await this.billPayLink.click();
   }
 }

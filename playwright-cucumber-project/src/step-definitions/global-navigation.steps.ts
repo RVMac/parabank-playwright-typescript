@@ -17,4 +17,7 @@ When('I click the Transfer Funds navigation link', async function () {
   await globalNavPage.clickTransferFundsLink();
 });
 
+When('I click the Bill Pay navigation link', async function () {
+  await globalNavPage.clickBillPayLink();
+});
 // #region WHEN STEPS

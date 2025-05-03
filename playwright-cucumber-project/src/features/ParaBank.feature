@@ -2,7 +2,7 @@ Feature: ParaBank
         Background:
             Given I am on the ParaBank login page
 
-        Scenario: End To End Test for ParaBank Application
+        Scenario: UI End To End Test for ParaBank Application
             #  Account Creation
              When I click on the Register link
              Then I should see the account sign up sheet
@@ -40,5 +40,19 @@ Feature: ParaBank
              When I click the Transfer Funds navigation link
               And I transfer "$50.00" from the new account to the existing account
              Then I should see success message for fund transfer
-            #  When I click on the Accounts Overview navigation link
-            #  Then I can see the new account has "$50.00" balance and the existing account has "$150.00" balance
+             When I click on the Accounts Overview navigation link
+             Then I can see the new account has "$150.00" balance
+
+             # Pay bills using new savings account
+             When I click the Bill Pay navigation link
+              And I do a bill payment using the new account with the following details:
+                  | Fields           | Value      |
+                  | Payee Name       | Test Payee |
+                  | Address          | 456 Elm St |
+                  | City             | Othertown  |
+                  | State            | NY         |
+                  | Zip Code         | 67890      |
+                  | Phone            | 9876543210 |
+                  | Payee To Account | 1234567890 |
+                  | Amount           | $50.00     |
+             Then I should see success message for bill payment
