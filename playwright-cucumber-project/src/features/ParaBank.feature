@@ -2,7 +2,7 @@ Feature: ParaBank
         Background:
             Given I am on the ParaBank login page
 
-        Scenario: UI End To End Test for ParaBank Application
+        Scenario: End To End Test for ParaBank Application
             #  Account Creation
              When I click on the Register link
              Then I should see the account sign up sheet
