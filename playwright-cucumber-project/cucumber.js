@@ -6,7 +6,6 @@ module.exports = {
       ],
       requireModule: ["ts-node/register"],
       format: ["progress-bar", "json:playwright-cucumber-project/reports/cucumber-report.json"],
-      publishQuiet: true,
       paths: ["src/features/ParaBank.feature"],
       worldParameters: {},
       formatOptions: {
