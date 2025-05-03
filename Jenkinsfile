@@ -4,27 +4,26 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
+                echo 'changing directory to playwright-cucumber-project...'
+                sh 'cd playwright-cucumber-project'
+                echo 'change directory done...'
                 echo 'installing dependecies...'
-                sh '''
-                    cd playwright-cucumber-project
-                    npm install
-                '''
-                echo 'Dependencies installed.'
+                sh 'npm install'
+                echo 'Dependencies installed...'
                 echo 'Running Playwright install...'
-                sh '''
-                    cd playwright-cucumber-project
-                    npx playwright install --with-deps
-                '''
-                echo 'Playwright installed.'
+                sh 'npx playwright install --with-deps'
+                echo 'Playwright installed...'
             }
         }
         stage('Test') {
             steps {
                 echo 'Starting Playwright Testing...'
-                sh '''
-                    cd playwright-cucumber-project
-                    npm test
-                '''
+                echo 'changing directory to playwright-cucumber-project...'
+                sh 'cd playwright-cucumber-project'
+                echo 'change directory done...'
+                echo 'Running Playwright tests...'
+                sh 'npm test'
+                echo 'Playwright tests are now done...'
             }
         }
     }
