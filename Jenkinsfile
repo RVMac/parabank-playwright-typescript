@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+      docker {
+        image 'pull mcr.microsoft.com/playwright:v1.50.0-noble'
+        args '-u root:root' // Run as root user to avoid permission issues
+      }
+    }
 
     stages {
         stage('Install Dependencies') {
