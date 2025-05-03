@@ -20,7 +20,7 @@ setDefaultTimeout(60 * 1000);
 
 BeforeAll(async function () {
   console.log("Launching browser...");
-  browser = await chromium.launch({ headless: false });
+  browser = await chromium.launch({ headless: true });
 });
 
 Before(async function () {
