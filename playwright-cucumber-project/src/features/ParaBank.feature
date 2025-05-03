@@ -56,3 +56,7 @@ Feature: ParaBank
                   | Payee To Account | 1234567890 |
                   | Amount           | $50.00     |
              Then I should see success message for bill payment
+
+             # Transaction history validation via Application
+             When I search the transaction history of the bill payment transaction via API
+             Then I should see the transaction history with the correct details

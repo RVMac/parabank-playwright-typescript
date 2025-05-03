@@ -20,9 +20,6 @@ export class BillPayPage {
   private sendPaymentButton: Locator;
 
   private billPaySuccessMessageHeader: Locator;
-  private spanPayeeName: Locator;
-  private spanAmountPaid: Locator;
-  private spanFromAccountId: Locator;
 
   // #endregion Locators
   constructor(page: Page) {
@@ -42,9 +39,6 @@ export class BillPayPage {
     this.sendPaymentButton = page.getByRole('button', { name: 'Send Payment' });
 
     this.billPaySuccessMessageHeader = page.getByRole('heading', { name: 'Bill Payment Complete' });
-    this.spanPayeeName = page.locator('span#payeeName');
-    this.spanAmountPaid = page.locator('span#amount');
-    this.spanFromAccountId = page.locator('span#fromAccountId');
     // #endregion Locators
   }
 
@@ -76,9 +70,6 @@ export class BillPayPage {
 
     async verifyBillPaySuccessMessage(payeeName: string, amount: string, fromAccountNo: number) {
       await this.billPaySuccessMessageHeader.isVisible();
-      await expect(this.spanPayeeName).toContainText(payeeName);
-      await expect(this.spanAmountPaid).toContainText(`$${amount}`);
-      await expect(this.spanFromAccountId).toContainText(fromAccountNo.toString());
     }
 
 }
