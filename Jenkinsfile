@@ -4,10 +4,10 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 dir('playwright-cucumber-project') {
-                    sh 'echo "Installing dependencies..."'
-                    sh 'npm install'
+                    bat 'echo "Installing dependencies..."'
+                    bat 'npm install'
                     echo 'Installing Playwright dependencies...'
-                    sh 'npx playwright install --with-deps'
+                    bat 'npx playwright install --with-deps'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Starting Playwright Testing...'
                 dir('playwright-cucumber-project') {
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }
