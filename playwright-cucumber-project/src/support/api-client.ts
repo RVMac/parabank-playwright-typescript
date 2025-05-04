@@ -1,4 +1,5 @@
 import { APIResponse, request } from "playwright";
+const urls = require('../../config/urls');
 
 export class ApiClient {
 
@@ -19,7 +20,7 @@ export class ApiClient {
       },
     });
 
-    const response = await context.get('https://parabank.parasoft.com/parabank/services_proxy/bank/accounts/'+ accountId +'/transactions/amount/'+ amount);
+    const response = await context.get(`${urls.paraBankAccounts}/${accountId}/transactions/amount/${amount}`);
 
     return response;
   }

@@ -1,5 +1,5 @@
 import { When } from "@cucumber/cucumber";
-import { GlobalNavigationPage } from "../pages/GlobalNavigationPage";
+import { GlobalNavigationPage } from "../../pages/GlobalNavigationPage";
 
 let globalNavPage: GlobalNavigationPage;
 

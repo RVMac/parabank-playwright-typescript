@@ -1,5 +1,5 @@
 import { Then } from "@cucumber/cucumber";
-import { HomePage } from "../pages/HomePage";
+import { HomePage } from "../../pages/HomePage";
 
 let homepage : HomePage;
 

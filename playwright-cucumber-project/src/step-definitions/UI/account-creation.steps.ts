@@ -1,7 +1,7 @@
 import { Given, Then, When } from "@cucumber/cucumber";
-import { ParaBankLoginPage } from "../pages/LoginPage";
+import { ParaBankLoginPage } from "../../pages/LoginPage";
 import { faker } from '@faker-js/faker';
-import { CustomerCreationPage } from "../pages/CustomerCreationPage";
+import { CustomerCreationPage } from "../../pages/CustomerCreationPage";
 
 let loginPage: ParaBankLoginPage;
 let homepage: CustomerCreationPage;

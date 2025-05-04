@@ -1,6 +1,6 @@
 import { Then, When } from "@cucumber/cucumber";
-import { GlobalNavigationPage } from "../pages/GlobalNavigationPage";
-import { OpenNewAccountPage } from "../pages/OpenNewAccountPage";
+import { GlobalNavigationPage } from "../../pages/GlobalNavigationPage";
+import { OpenNewAccountPage } from "../../pages/OpenNewAccountPage";
 
 let globalNavPage: GlobalNavigationPage;
 let openNewAccountPage: OpenNewAccountPage;

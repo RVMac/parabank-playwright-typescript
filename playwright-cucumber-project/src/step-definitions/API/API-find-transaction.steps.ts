@@ -1,5 +1,5 @@
 import { Then, When } from "@cucumber/cucumber";
-import ApiClient from "../support/api-client";
+import ApiClient from "../../support/api-client";
 import { APIResponse } from "playwright";
 import { Serializable } from "child_process";
 import { expect } from "playwright/test";

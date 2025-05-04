@@ -1,6 +1,6 @@
 import { Then, When } from "@cucumber/cucumber";
-import { CustomerCreationPage } from "../pages/CustomerCreationPage";
-import { AccountOverViewPage } from "../pages/AccountOverViewPage";
+import { CustomerCreationPage } from "../../pages/CustomerCreationPage";
+import { AccountOverViewPage } from "../../pages/AccountOverViewPage";
 
 let homepage: CustomerCreationPage;
 let accountsOverviewPage: AccountOverViewPage;

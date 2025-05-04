@@ -1,5 +1,5 @@
 import { Given, Then, When } from "@cucumber/cucumber";
-import { ParaBankLoginPage } from "../pages/LoginPage";
+import { ParaBankLoginPage } from "../../pages/LoginPage";
 let loginPage: ParaBankLoginPage;
 
 // #region GIVEN STEPS

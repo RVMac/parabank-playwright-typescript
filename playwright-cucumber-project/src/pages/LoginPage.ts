@@ -1,4 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
+const urls = require('../../config/urls');
+
 
 export class ParaBankLoginPage {
   private page: Page;
@@ -54,7 +56,9 @@ export class ParaBankLoginPage {
   }
 
   async navigate() {
-    await this.page.goto("https://parabank.parasoft.com/");
+    await this.page.goto(urls.loginUrl, { waitUntil: 'networkidle' });
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(2000);
   }
 
   async login(username: string, password: string) {

@@ -1,5 +1,5 @@
 import { Then, When } from "@cucumber/cucumber";
-import { TransferFundsPage } from "../pages/TransferFundsPage";
+import { TransferFundsPage } from "../../pages/TransferFundsPage";
 
 let transferFundsPage: TransferFundsPage;
 
